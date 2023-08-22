@@ -1,0 +1,43 @@
+/* @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,400;1,100;1,200&display=swap"); */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.home {
+  background-image: radial-gradient(
+      circle,
+      rgba(85, 80, 82, 1) 0%,
+      rgba(0, 0, 0, 0.3505996148459384) 100%
+    ),
+    url("https://images.alphacoders.com/692/692039.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  html,
+  body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+}
+
+#sidebar a.active p {
+  color: red;
+}
