@@ -1,4 +1,4 @@
-import { Home, Visibility, VisibilityOff } from "@mui/icons-material";
+import { Visibility, VisibilityOff } from "@mui/icons-material";
 import {
   Card,
   CardContent,
@@ -54,7 +54,7 @@ export function Login() {
     resolver: yupResolver(schema),
   });
 
-  const { handleSubmit, register, reset, formState } = form;
+  const { handleSubmit, register, formState } = form;
   const { errors } = formState;
 
   const login = useMutation("login", LOGIN, {

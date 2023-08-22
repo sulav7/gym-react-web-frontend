@@ -117,10 +117,6 @@ export function Details() {
     navigate("/login");
   };
 
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
-
   const handleClose = () => {
     setOpen(false);
   };

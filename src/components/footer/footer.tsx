@@ -1,13 +1,12 @@
 import {
   Email,
-  Facebook,
   FacebookRounded,
   Instagram,
   LocationCity,
   Phone,
   Twitter,
 } from "@mui/icons-material";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Footer = () => {
   return (

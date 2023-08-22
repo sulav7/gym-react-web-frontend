@@ -117,7 +117,7 @@ const PricingCards = () => {
                 variant="contained"
                 className="mt-5"
                 onClick={() => onGetStartedBtnClick(item?.id)}
-                disabled={userData?.planId ? true : false}
+                disabled={userData?.planId || isDisbale === true ? true : false}
               >
                 Enroll
               </Button>
