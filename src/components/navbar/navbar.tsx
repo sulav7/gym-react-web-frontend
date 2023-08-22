@@ -97,7 +97,7 @@ const Navbar = () => {
 
                   {!isAuthenticated() && (
                     <Button
-                      variant="outlined"
+                      variant="contained"
                       onClick={() => navigation("/login")}
                     >
                       LogIn
@@ -183,7 +183,7 @@ const Navbar = () => {
           </NavLink>
 
           {!isAuthenticated() && (
-            <Button variant="outlined" onClick={() => navigation("/login")}>
+            <Button variant="contained" onClick={() => navigation("/login")}>
               LogIn
             </Button>
           )}
