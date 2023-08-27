@@ -67,8 +67,8 @@ const Navbar = () => {
                 </div>
               </div>
               <div className="hidden md:block">
-                <div className="ml-4 flex items-center space-x-4 ">
-                  <NavLink to="/home" className="no-underline">
+                <div className="ml-4 flex items-center space-x-4">
+                  <NavLink to="/home" className="no-underline ">
                     <p className="text-black no-underline  hover:text-red-600 transition:3s ease-out px-3 py-2 rounded-md text-sm font-medium">
                       Home
                     </p>
@@ -77,6 +77,11 @@ const Navbar = () => {
                     <motion.p className="text-black no-underline hover:text-red-600 transition:3s ease-out px-3 py-2 rounded-md text-sm font-medium">
                       About Us
                     </motion.p>
+                  </NavLink>
+                  <NavLink className="no-underline" to="/courses">
+                    <p className="text-black no-underline hover:text-red-600 transition:3s ease-out px-3 py-2 rounded-md text-sm font-medium">
+                      Courses
+                    </p>
                   </NavLink>
                   <NavLink className="no-underline" to="/packages">
                     <p className="text-black no-underline hover:text-red-600 transition:3s ease-out px-3 py-2 rounded-md text-sm font-medium">
@@ -168,6 +173,12 @@ const Navbar = () => {
               About
             </p>
           </NavLink>
+
+          <NavLink className="no-underline" to="/courses">
+            <p className="text-black no-underline hover:text-red-600 transition:3s ease-out px-3 py-2 rounded-md text-sm font-medium">
+              Courses
+            </p>
+          </NavLink>
           <NavLink className="no-underline" to="/packages">
             <p className="text-black hover:text-red-600 transition:3s ease-out block px-3 py-2 rounded-md text-base font-medium">
               Package
@@ -183,9 +194,12 @@ const Navbar = () => {
           </NavLink>
 
           {!isAuthenticated() && (
-            <Button variant="contained" onClick={() => navigation("/login")}>
+            <button
+              className="outline-none border-none bg-[#00785a] h-10 text-white rounded-sm w-40 cursor-pointer hover:bg-black"
+              onClick={() => navigation("/login")}
+            >
               LogIn
-            </Button>
+            </button>
           )}
 
           {isAuthenticated() && (

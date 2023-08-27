@@ -17,6 +17,7 @@ import { useMutation } from "react-query";
 import { LOGIN } from "../../service/application/mutation";
 import { toast } from "react-hot-toast";
 import { AuthContext } from "../../utils/auth";
+import { isAuthenticated } from "../../utils/token.utils";
 
 export interface ILogin {
   email: string;
@@ -75,6 +76,9 @@ export function Login() {
   const navigateToSignUpPage = () => {
     navigate("/signup");
   };
+  if (isAuthenticated()) {
+    navigate("/");
+  }
 
   return (
     <>
@@ -131,7 +135,10 @@ export function Login() {
               <div>
                 <p className="text-center text-sm">
                   Forgot Password?{" "}
-                  <a className="text-primary underline cursor-pointer">
+                  <a
+                    className="text-primary underline cursor-pointer"
+                    onClick={() => navigate("/forgot-password")}
+                  >
                     Reset Password
                   </a>
                 </p>

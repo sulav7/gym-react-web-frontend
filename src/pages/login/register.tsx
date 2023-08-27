@@ -7,6 +7,7 @@ import { useForm } from "react-hook-form";
 import { toast } from "react-hot-toast";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { useNavigate } from "react-router-dom";
 
 interface ISignUp {
   firstName: string;
@@ -47,10 +48,14 @@ const schema: yup.ObjectSchema<ISignUp> = yup.object({
 export function Register() {
   const [type, setType] = useState("password");
 
+  const navigate = useNavigate();
+
   const createUser = useMutation("data", addApplication, {
     onSuccess: (data) => {
       console.log(data);
+      navigate("/login");
       toast.success(data.data.message);
+
       reset();
     },
     onError: (data: any) => {
@@ -96,14 +101,14 @@ export function Register() {
                 Create an <span className="text-primary">Account</span>
               </h1>
               <TextField
-                label="email"
+                label="Email"
                 fullWidth
                 {...register("email")}
                 error={!!errors?.email}
                 helperText={errors?.email?.message}
               />
               <TextField
-                label="firstName"
+                label="FirstName"
                 fullWidth
                 {...register("firstName")}
                 error={!!errors?.firstName}
@@ -111,7 +116,7 @@ export function Register() {
               />
 
               <TextField
-                label="lastName"
+                label="LastName"
                 fullWidth
                 {...register("lastName")}
                 error={!!errors?.lastName}
@@ -126,7 +131,7 @@ export function Register() {
                 helperText={errors?.phoneNumber?.message}
               />
               <TextField
-                label="password"
+                label="Password"
                 {...register("password")}
                 type={type}
                 error={!!errors?.password}

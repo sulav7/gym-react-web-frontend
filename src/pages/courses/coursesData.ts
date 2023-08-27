@@ -7,7 +7,8 @@ export interface ICourse {
 export const CourseData: ICourse[] = [
   {
     id: 1,
-    image: "https://preview.colorlib.com/theme/dazko/images/classes-1.jpg.webp",
+    image:
+      "https://www.seekpng.com/png/detail/32-327670_about1-gym-workout-imges-png.png",
     type: "Body Building",
   },
   {

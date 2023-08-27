@@ -1,3 +1,4 @@
+import { IForgotPassword } from "../../pages/login/forgotPassword";
 import { ILogin } from "../../pages/login/login";
 import { IUserData } from "../../pages/membership/membership";
 import instance from "../../utils/http/interceptor";
@@ -25,4 +26,14 @@ export const DELETE_USER = async (id: string) => {
 export const UPDATE_PLAN = async (data: IUserData, planId: string) => {
   const updatePlan = await instance.patch(`user/updatePlan/${planId}`, data);
   return updatePlan;
+};
+
+export const FORGOT_PASSWORD = async (email: IForgotPassword) => {
+  const forgotPassword = await instance.post(`auth/forgotPassword`, email);
+  return forgotPassword;
+};
+
+export const REMOVE_PLAN = async () => {
+  const deletePlan = await instance.delete(`user/remove/plans`);
+  return deletePlan;
 };

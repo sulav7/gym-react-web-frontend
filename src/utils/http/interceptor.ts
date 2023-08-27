@@ -1,5 +1,5 @@
 import axios from "axios";
-import { getTokenFromStorage } from "../storage.utils";
+import { clearLocalStorage, getTokenFromStorage } from "../storage.utils";
 
 const instance = axios.create({
   baseURL: "http://localhost:8100/api/v1/",
@@ -26,6 +26,14 @@ instance.interceptors.response.use(
     return res;
   },
   async (err) => {
+    if (err.response.data.code === 401) {
+      clearLocalStorage("@token");
+      clearLocalStorage("@data");
+      window.location.href = "/login";
+    }
+    if (err.response.data.code === 403) {
+      window.location.href = "/not-found";
+    }
     return Promise.reject(err);
   }
 );

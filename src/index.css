@@ -27,6 +27,21 @@ body {
   width: 100%;
 }
 
+.about {
+  background-image: radial-gradient(
+      circle,
+      rgba(85, 80, 82, 1) 0%,
+      rgba(0, 0, 0, 0.3505996148459384) 100%
+    ),
+    url("https://preview.colorlib.com/theme/dazko/images/bg_1.jpg.webp");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  height: 80vh;
+  width: 100%;
+}
+
 @media (max-width: 768px) {
   html,
   body {
@@ -39,5 +54,7 @@ body {
 }
 
 #sidebar a.active p {
-  color: red;
+  color: rebeccapurple;
+
+  font-weight: bolder;
 }

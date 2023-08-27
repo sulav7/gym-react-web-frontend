@@ -3,6 +3,6 @@ export interface IUserData {
   lastName: string;
   email: string;
   phoneNumber: string;
-  startDate?: string;
-  endDate?: string;
+  startDate?: string | null;
+  endDate?: string | null;
 }

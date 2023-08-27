@@ -31,15 +31,10 @@ const PricingCards = () => {
 
   const [id, setId] = useState("");
 
-  const { userData } = useContext(AuthContext);
-  const [isDisbale, setIsDisbable] = useState(false);
-
   const navigate = useNavigate();
 
   const { data, isLoading, refetch } = useQuery("Data", GET_PRICING_DATA, {
-    onSuccess: (data) => {
-      console.log(data);
-    },
+    onSuccess: () => {},
   });
 
   const UPDATE = async (data: { data: IUserData }) => {
@@ -49,9 +44,12 @@ const PricingCards = () => {
 
   const update = useMutation("update", UPDATE, {
     onSuccess: () => {
-      setIsDisbable(true);
       toast.success("Package has been enrolled");
+
       refetch();
+    },
+    onError: () => {
+      toast.error("You are already enrolled in a plan");
     },
   });
 
@@ -69,6 +67,7 @@ const PricingCards = () => {
       setId(pricingId);
     } else {
       navigate("/login");
+      toast.success("Please login to continue");
     }
   };
 
@@ -117,7 +116,6 @@ const PricingCards = () => {
                 variant="contained"
                 className="mt-5"
                 onClick={() => onGetStartedBtnClick(item?.id)}
-                disabled={userData?.planId || isDisbale === true ? true : false}
               >
                 Enroll
               </Button>

@@ -4,6 +4,15 @@ import { CourseData } from "./coursesData";
 function Courses() {
   return (
     <>
+      <div className="about bg-gray-100 flex items-center justify-center p-6">
+        <div>
+          <div>
+            <h1 className="text-white  font-bold text-5xl whitespace-normal">
+              Home ---- Courses
+            </h1>
+          </div>
+        </div>
+      </div>
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

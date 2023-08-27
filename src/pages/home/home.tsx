@@ -1,5 +1,6 @@
 import { ArrowForward } from "@mui/icons-material";
-import { motion } from "framer-motion";
+
+import Testimonial from "../../components/testimonials/testimonials";
 
 export function Home() {
   return (
@@ -10,25 +11,15 @@ export function Home() {
             <h1 className="text-white  font-bold text-5xl whitespace-normal">
               Shape Your Perfect Body
             </h1>
-
-            <button className="outline-none border-none bg-[#e1193e] h-10 text-white rounded-sm w-40 cursor-pointer hover:bg-black hover:transition ease-in-out ">
-              Become a Member
-            </button>
           </div>
         </div>
       </div>
       <div className="flex justify-evenly flex-wrap  ">
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 3, delay: 0.1 }}
-        >
-          <img
-            height={530}
-            src="https://preview.colorlib.com/theme/dazko/images/about.png.webp"
-          />
-        </motion.div>
+        <img
+          height={530}
+          src="https://www.vhv.rs/file/max/3/35192_fitness-man-png.png"
+        />
+
         <div className="pl-[40px]">
           <h3 className="text-primary ">Information about us</h3>
           <h2>
@@ -75,6 +66,13 @@ export function Home() {
           <h1 className="text-3xl md:text-4xl">1k+</h1>
           <p className="text-lg md:text-xl">Satisfied Clients</p>
         </span>
+      </div>
+      <div>
+        <h1 className="text-center">Testimonials</h1>
+        <p className="text-center mt-10">
+          See What Our <span className="text-primary">Client</span> Says
+        </p>
+        <Testimonial />
       </div>
     </>
   );
